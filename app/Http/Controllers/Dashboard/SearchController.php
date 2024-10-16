@@ -24,6 +24,6 @@ class SearchController extends Controller
          ->orWhere('email','like',"%$search%")
          ->orWhere('phone','like',"%$search%")
          ->paginate()->withQueryString();
-         return view('Dashboard.results.contact',compact('results'))->with('i',($request->input('page',1)-1)*15);
+         return view('Dashboard.results.contact',compact(['results','search']))->with('i',($request->input('page',1)-1)*15);
      }
 }

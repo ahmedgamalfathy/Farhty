@@ -12,7 +12,7 @@ class ContactsController extends Controller
      */
     public function index()
     {
-        $contacts =Contacts::paginate();
+        $contacts =Contacts::paginate()->withQueryString();
         return view('Dashboard.contacts.index',compact('contacts'));
     }
 
